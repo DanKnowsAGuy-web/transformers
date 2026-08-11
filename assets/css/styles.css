@@ -1015,3 +1015,44 @@ body.modal-open { overflow: hidden; }
 }
 /* end hero parallax */
 
+
+/* ===== Hero vertical position — desktop lift (final overrides) ===== */
+@media (min-width: 768px) {
+  .hero.hero-cinematic,
+  .hero-cinematic.hero-parallax {
+    min-height: 0 !important;
+    height: auto;
+    max-height: none;
+    /* fill upper viewport without forcing chips to the floor */
+    min-height: 78vh !important;
+    justify-content: flex-start !important;
+    padding-top: 5.5rem; /* clear fixed header */
+    padding-bottom: 2.5rem;
+    box-sizing: border-box;
+  }
+  .hero-cinematic .hero-inner {
+    transform: none !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0 !important;
+    margin-top: 0;
+  }
+  .hero-cinematic .hero-badge { margin-bottom: 0.85rem !important; }
+  .hero-cinematic h1 {
+    margin-bottom: 0.75rem !important;
+    font-size: clamp(2.25rem, 4.2vw, 3.15rem) !important;
+  }
+  .hero-cinematic .hero-lede { margin-bottom: 1.15rem !important; }
+  .hero-cinematic .hero-actions { margin-bottom: 1rem !important; }
+  .hero-cinematic .hero-chips { margin-top: 0 !important; }
+  .hero-cinematic.hero-parallax .hero-scroll-hint {
+    display: none; /* frees bottom; scroll is obvious on desktop */
+  }
+}
+@media (min-width: 1100px) {
+  .hero.hero-cinematic,
+  .hero-cinematic.hero-parallax {
+    min-height: 72vh !important;
+    padding-top: 5.25rem;
+  }
+}
+
