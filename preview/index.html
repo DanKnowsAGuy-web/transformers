@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/styles.css?v=v6">
+<link rel="stylesheet" href="../assets/css/styles.css?v=v7">
 </head>
-<body>
+<body class="preview-motion">
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
@@ -59,13 +59,13 @@
 <main id="main">
   <div class="preview-banner">
     <div class="container preview-banner-inner">
-      <strong>Internal preview</strong>
-      <span>Hybrid mock: unit photo, copper-emphasized crop, balanced gradient.</span>
+      <strong>Motion preview only</strong>
+      <span>Scroll the page — parallax + copy drift. Not on the public homepage until you approve.</span>
       <a href="../">← Back to live site</a>
     </div>
   </div>
 
-  <section class="hero hero-cinematic" data-hero>
+  <section class="hero hero-cinematic hero-parallax" data-hero data-parallax-hero>
     <div class="hero-bg" aria-hidden="true">
       <img src="../assets/img/hero-copper-hybrid.jpg?v=v6" alt="" class="hero-bg-img" data-hero-img>
       <div class="hero-vignette"></div>
@@ -87,6 +87,10 @@
         <div class="hero-chip" role="listitem"><strong>3 mo+</strong><span>Lead times from</span></div>
         <div class="hero-chip" role="listitem"><strong>IEEE · IEC</strong><span>Standards ready</span></div>
       </div>
+    </div>
+    <div class="hero-scroll-hint" data-scroll-hint aria-hidden="true">
+      Scroll to preview motion
+      <span></span>
     </div>
     <div class="hero-picker" data-hero-picker>
       <p class="hero-picker-label">Click a thumbnail to swap the large hero image</p>
@@ -200,20 +204,41 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section" id="motion-notes">
     <div class="container narrow">
-      <p class="eyebrow">Preview notes</p>
+      <p class="eyebrow">Motion preview</p>
       <h2 class="section-title">What you’re reviewing</h2>
       <ul class="check-list">
-        <li>Full-viewport cinematic hero (Ken Burns + grain + left vignette)</li>
-        <li>Tighter three-beat copy and primary + quiet secondary CTA</li>
-        <li>Proof chips and trust strip</li>
-        <li>Hero image options via the strip above — not visible on the public homepage</li>
+        <li><strong>Copper hybrid hero</strong> — approved image direction (unit + copper emphasis)</li>
+        <li><strong>Scroll parallax</strong> — background moves slower than the page; copy drifts slightly and eases out</li>
+        <li><strong>Preview only</strong> — the public homepage does not have this motion yet</li>
+        <li>Image picker still works above — try other options with the same motion</li>
       </ul>
-      <p class="lede" style="margin-top:1.5rem">When you approve, tell us which hero image and we’ll publish to the live homepage (picker removed).</p>
+      <p class="lede" style="margin-top:1.5rem">Scroll up and down through this section a few times. If you like the feel, say approve and we’ll enable the same motion on the live homepage.</p>
       <div class="hero-actions" style="margin-top:1.5rem">
-        <a class="btn btn-primary" href="../">View live public site</a>
+        <a class="btn btn-primary" href="../">View live public site (no motion)</a>
       </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-elevated); border-block: 1px solid var(--border);">
+    <div class="container narrow">
+      <p class="eyebrow">Scroll runway</p>
+      <h2 class="section-title">Keep scrolling to feel the parallax</h2>
+      <p class="lede">This block exists only on the internal preview so you have enough page length to judge the hero motion. It will not ship to the public site as-is.</p>
+      <ul class="check-list" style="margin-top:1.25rem">
+        <li>Background image shifts on the vertical axis as you scroll</li>
+        <li>Headline / chips ease upward and slightly fade — subtle, not theatrical</li>
+        <li>Reduced-motion OS settings disable the effect automatically</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container narrow">
+      <p class="eyebrow">Decision</p>
+      <h2 class="section-title">Ready when you are</h2>
+      <p class="lede">Approve to apply scroll motion to the live homepage with the copper hybrid hero. Or ask for a lighter / stronger parallax before we ship it.</p>
     </div>
   </section>
 </main>
@@ -270,6 +295,59 @@
   </div>
 </footer>
 <script>window.EP_CONTACT = {"phone":"864-777-0688","phoneTel":"tel:+18647770688","email":"dan@yourenergyplus.com","smsHref":"sms:+18647770688?body=Hi%20Dan%20%E2%80%94%20I%27m%20interested%20in%20how%20Energy%20Plus%20can%20help%20with%20transformer%20procurement.%20What%27s%20the%20best%20next%20step%3F","emailHref":"mailto:dan@yourenergyplus.com?subject=Transformer%20inquiry%20%E2%80%94%20Energy%20Plus&body=Hi%20Dan%2C%0A%0AI'm%20interested%20in%20discussing%20transformer%20procurement%20with%20Energy%20Plus.%0A%0AProject%20%2F%20need%3A%0A%0A%0AThanks%2C","formspree":"https://formspree.io/f/maewodgg","smsBody":"Hi Dan — I'm interested in how Energy Plus can help with transformer procurement. What's the best next step?"};</script>
-<script src="../assets/js/site.js?v=hero2"></script>
+
+<script>
+/* Preview-only hero scroll motion — not loaded on public homepage */
+(function () {
+  if (!document.body.classList.contains("preview-motion")) return;
+  var hero = document.querySelector("[data-parallax-hero]");
+  if (!hero) return;
+  var bg = hero.querySelector(".hero-bg");
+  var img = hero.querySelector("[data-hero-img]");
+  var copy = hero.querySelector(".hero-copy");
+  var chips = hero.querySelector(".hero-chips");
+  var hint = hero.querySelector("[data-scroll-hint]");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;
+
+  var ticking = false;
+  function frame() {
+    ticking = false;
+    var rect = hero.getBoundingClientRect();
+    var vh = window.innerHeight || 1;
+    // progress: 0 at top of hero in view, 1 when hero fully scrolled past
+    var raw = (vh - rect.top) / (vh + rect.height);
+    var p = Math.max(0, Math.min(1, raw));
+    // parallax travel in px — subtle industrial, not flashy
+    var yBg = (p - 0.35) * 90;   // background moves slower / opposite feel
+    var yImg = (p - 0.35) * 46;
+    var yCopy = p * 36;
+    var yChips = p * 52;
+    var fade = Math.max(0, 1 - p * 1.15);
+    if (bg) bg.style.transform = "translate3d(0," + yBg.toFixed(2) + "px,0)";
+    if (img) img.style.transform = "scale(1.12) translate3d(0," + yImg.toFixed(2) + "px,0)";
+    if (copy) {
+      copy.style.transform = "translate3d(0," + yCopy.toFixed(2) + "px,0)";
+      copy.style.opacity = String(Math.max(0.15, fade));
+    }
+    if (chips) {
+      chips.style.transform = "translate3d(0," + yChips.toFixed(2) + "px,0)";
+      chips.style.opacity = String(Math.max(0.1, fade * 0.95));
+    }
+    if (hint) hint.classList.toggle("is-hidden", window.scrollY > 48);
+  }
+  function onScroll() {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(frame);
+    }
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  frame();
+})();
+</script>
+
+<script src="../assets/js/site.js?v=v7"></script>
 </body>
 </html>
