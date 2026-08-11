@@ -497,11 +497,11 @@ body.modal-open { overflow: hidden; }
 
 /* ===== Premium cinematic hero ===== */
 .hero-cinematic {
-  min-height: min(100dvh, 56rem);
-  min-height: 100svh;
+  min-height: min(92dvh, 50rem);
+  min-height: min(92svh, 50rem);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start; /* content sits upper — not glued to bottom */
   padding-bottom: 0;
   position: relative;
   overflow: hidden;
@@ -590,20 +590,28 @@ body.modal-open { overflow: hidden; }
 .hero-cinematic .hero-inner {
   position: relative;
   z-index: 2;
-  padding-block: 6rem 3.5rem;
+  padding-block: 5.25rem 2.25rem;
   max-width: var(--container);
   margin: 0 auto;
   width: 100%;
 }
 @media (min-width: 768px) {
   .hero-cinematic .hero-inner {
-    padding-block: 8rem 4.5rem;
+    /* Desktop: lift whole stack substantially into upper-mid hero */
+    padding-block: 6.25rem 2rem;
+    padding-top: clamp(5.5rem, 12vh, 7.5rem);
   }
   .hero-cinematic .hero-inner > :not(.hero-chips) {
     max-width: 34rem;
   }
   .hero-cinematic .hero-chips {
-    max-width: 40rem;
+    max-width: 42rem;
+    margin-top: 0.25rem;
+  }
+}
+@media (min-width: 1100px) {
+  .hero-cinematic .hero-inner {
+    padding-top: clamp(5rem, 11vh, 6.75rem);
   }
 }
 .hero-cinematic .hero-badge {
@@ -630,8 +638,8 @@ body.modal-open { overflow: hidden; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 1.25rem 1.75rem;
-  margin-bottom: 2.75rem;
+  gap: 1rem 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .hero-secondary {
   font-size: 0.95rem;
@@ -940,7 +948,7 @@ body.modal-open { overflow: hidden; }
 .hero-cinematic.hero-parallax .hero-scroll-hint {
   position: absolute;
   left: 50%;
-  bottom: 1.25rem;
+  bottom: 0.85rem;
   transform: translateX(-50%);
   z-index: 4;
   display: flex;
