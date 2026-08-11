@@ -132,13 +132,13 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-outline-light:hover { background: rgb(255 255 255 / 0.1); }
 .hero { position: relative; color: var(--fg-on-dark); background: var(--bg-dark); overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 1; filter: none; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; opacity: 1; filter: saturate(1.08) contrast(1.04) brightness(1.02); }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
-  /* Minimal left text legibility only — photo is primary */
+  /* Balanced: readable type on left, copper equipment clear on right */
   background:
-    linear-gradient(90deg, rgb(7 15 24 / 0.28) 0%, rgb(7 15 24 / 0.1) 28%, transparent 48%),
-    linear-gradient(0deg, rgb(7 15 24 / 0.18) 0%, transparent 35%);
+    linear-gradient(90deg, rgb(7 15 24 / 0.78) 0%, rgb(7 15 24 / 0.52) 28%, rgb(7 15 24 / 0.22) 52%, rgb(7 15 24 / 0.08) 72%, transparent 88%),
+    linear-gradient(0deg, rgb(7 15 24 / 0.45) 0%, transparent 42%, rgb(7 15 24 / 0.18) 100%);
 }
 .hero-inner { position: relative; padding-block: 4rem 5rem; }
 @media (min-width: 768px) {
@@ -538,12 +538,14 @@ body.modal-open { overflow: hidden; }
   pointer-events: none;
   background:
     linear-gradient(90deg,
-      rgb(7 15 24 / 0.22) 0%,
-      rgb(7 15 24 / 0.08) 22%,
-      transparent 45%),
+      rgb(7 15 24 / 0.62) 0%,
+      rgb(7 15 24 / 0.32) 30%,
+      rgb(7 15 24 / 0.1) 55%,
+      transparent 75%),
     linear-gradient(0deg,
-      rgb(7 15 24 / 0.16) 0%,
-      transparent 35%);
+      rgb(7 15 24 / 0.4) 0%,
+      transparent 42%,
+      rgb(7 15 24 / 0.16) 100%);
 }
 .hero-grain {
   position: absolute;
@@ -583,7 +585,7 @@ body.modal-open { overflow: hidden; }
 }
 .hero-cinematic .hero-bg-img {
   opacity: 1;
-  filter: saturate(1.08) contrast(1.06) brightness(1.15);
+  filter: saturate(1.1) contrast(1.05) brightness(1.04);
 }
 .hero-cinematic .hero-inner {
   position: relative;

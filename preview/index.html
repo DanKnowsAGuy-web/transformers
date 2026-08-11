@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/styles.css?v=v4">
+<link rel="stylesheet" href="../assets/css/styles.css?v=v5">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -59,15 +59,15 @@
 <main id="main">
   <div class="preview-banner">
     <div class="container preview-banner-inner">
-      <strong>HERO BRIGHTNESS FIX v4</strong>
-      <span>You should see a clear copper-winding transformer and an orange BRIGHT HERO v4 tag on the photo.</span>
+      <strong>Internal preview</strong>
+      <span>Copper-winding hero · balanced exposure · gradient restored for type.</span>
       <a href="../">← Back to live site</a>
     </div>
   </div>
 
   <section class="hero hero-cinematic" data-hero>
     <div class="hero-bg" aria-hidden="true">
-      <img src="../assets/img/hero-home-bright.jpg" alt="" class="hero-bg-img" data-hero-img>
+      <img src="../assets/img/hero-opt-unit.jpg?v=v5" alt="" class="hero-bg-img" data-hero-img>
       <div class="hero-vignette"></div>
       <div class="hero-grain"></div>
     </div>
@@ -92,9 +92,9 @@
       <p class="hero-picker-label">Click a thumbnail to swap the large hero image</p>
       <p class="hero-active-label" data-hero-active-label hidden></p>
       <div class="hero-picker-thumbs">
-        <button type="button" class="hero-thumb is-active" data-hero-src="../assets/img/hero-opt-detail.jpg" title="Unit detail"><img src="../assets/img/hero-opt-detail.jpg" alt="Option: unit detail"></button>
+        <button type="button" class="hero-thumb" data-hero-src="../assets/img/hero-opt-detail.jpg" title="Unit detail"><img src="../assets/img/hero-opt-detail.jpg" alt="Option: unit detail"></button>
         <button type="button" class="hero-thumb" data-hero-src="../assets/img/hero-opt-substation.jpg" title="Substation twilight"><img src="../assets/img/hero-opt-substation.jpg" alt="Option: substation"></button>
-        <button type="button" class="hero-thumb" data-hero-src="../assets/img/hero-opt-unit.jpg" title="Power transformer"><img src="../assets/img/hero-opt-unit.jpg" alt="Option: unit"></button>
+        <button type="button" class="hero-thumb is-active" data-hero-src="../assets/img/hero-opt-unit.jpg" title="Power transformer — copper windings"><img src="../assets/img/hero-opt-unit.jpg" alt="Option: unit"></button>
         <button type="button" class="hero-thumb" data-hero-src="../assets/img/hero-opt-yard.jpg" title="Yard industrial"><img src="../assets/img/hero-opt-yard.jpg" alt="Option: yard"></button>
         <button type="button" class="hero-thumb" data-hero-src="../assets/img/hero-opt-powerlines.jpg" title="Transmission lines"><img src="../assets/img/hero-opt-powerlines.jpg" alt="Option: lines"></button>
         <button type="button" class="hero-thumb" data-hero-src="../assets/img/hero-opt-specialty.jpg" title="Specialty gear"><img src="../assets/img/hero-opt-specialty.jpg" alt="Option: specialty"></button>
@@ -121,7 +121,7 @@
   });
   var hero = document.querySelector('[data-hero-img]');
   if (hero) {
-    var f = (hero.getAttribute('src')||'').split('/').pop() || 'hero-home-bright.jpg';
+    var f = (hero.getAttribute('src')||'').split('/').pop() || 'hero-opt-unit.jpg';
     hero.src = (window.EP_SITE_ROOT || '') + '/assets/img/' + f;
   }
 })();
