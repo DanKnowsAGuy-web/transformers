@@ -1021,38 +1021,61 @@ body.modal-open { overflow: hidden; }
   .hero.hero-cinematic,
   .hero-cinematic.hero-parallax {
     min-height: 0 !important;
-    height: auto;
-    max-height: none;
-    /* fill upper viewport without forcing chips to the floor */
-    min-height: 78vh !important;
+    min-height: 70vh !important;
+    height: auto !important;
     justify-content: flex-start !important;
-    padding-top: 5.5rem; /* clear fixed header */
-    padding-bottom: 2.5rem;
+    padding-top: 5rem !important; /* under header */
+    padding-bottom: 2rem !important;
     box-sizing: border-box;
   }
   .hero-cinematic .hero-inner {
     transform: none !important;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0 !important;
-    margin-top: 0;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    width: 100%;
   }
-  .hero-cinematic .hero-badge { margin-bottom: 0.85rem !important; }
+  .hero-cinematic .hero-copy {
+    padding: 1rem 1.1rem 1rem !important;
+    margin-left: 0 !important;
+    margin-bottom: 0.85rem !important;
+  }
+  .hero-cinematic .hero-badge {
+    margin-bottom: 0.65rem !important;
+    font-size: 0.7rem !important;
+  }
   .hero-cinematic h1 {
-    margin-bottom: 0.75rem !important;
-    font-size: clamp(2.25rem, 4.2vw, 3.15rem) !important;
+    margin-bottom: 0.55rem !important;
+    font-size: clamp(2.1rem, 3.8vw, 2.85rem) !important;
+    line-height: 1.08 !important;
   }
-  .hero-cinematic .hero-lede { margin-bottom: 1.15rem !important; }
-  .hero-cinematic .hero-actions { margin-bottom: 1rem !important; }
-  .hero-cinematic .hero-chips { margin-top: 0 !important; }
+  .hero-cinematic .hero-lede {
+    margin-bottom: 0.9rem !important;
+    font-size: 1rem !important;
+    line-height: 1.45 !important;
+  }
+  .hero-cinematic .hero-actions {
+    margin-bottom: 0.85rem !important;
+    gap: 0.75rem 1.15rem !important;
+  }
+  .hero-cinematic .hero-chips {
+    margin-top: 0 !important;
+    gap: 0.5rem !important;
+  }
+  .hero-cinematic .hero-chip {
+    padding: 0.65rem 0.75rem !important;
+  }
+  .hero-cinematic .hero-chip strong {
+    font-size: 0.95rem !important;
+  }
   .hero-cinematic.hero-parallax .hero-scroll-hint {
-    display: none; /* frees bottom; scroll is obvious on desktop */
+    display: none !important;
   }
 }
 @media (min-width: 1100px) {
   .hero.hero-cinematic,
   .hero-cinematic.hero-parallax {
-    min-height: 72vh !important;
-    padding-top: 5.25rem;
+    min-height: 64vh !important;
+    padding-top: 5.25rem !important;
   }
 }
 
