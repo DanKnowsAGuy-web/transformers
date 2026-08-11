@@ -314,18 +314,18 @@
   function frame() {
     ticking = false;
     var rect = hero.getBoundingClientRect();
-    var vh = window.innerHeight || 1;
-    // progress: 0 at top of hero in view, 1 when hero fully scrolled past
-    var raw = (vh - rect.top) / (vh + rect.height);
-    var p = Math.max(0, Math.min(1, raw));
+    // 0 while hero is at rest (top in view); 1 as hero scrolls out
+    var scrolled = Math.max(0, -rect.top);
+    var maxScroll = Math.max(1, rect.height * 0.85);
+    var p = Math.min(1, scrolled / maxScroll);
     // parallax travel in px — subtle industrial, not flashy
-    var yBg = (p - 0.35) * 90;   // background moves slower / opposite feel
-    var yImg = (p - 0.35) * 46;
-    var yCopy = p * 36;
-    var yChips = p * 52;
-    var fade = Math.max(0, 1 - p * 1.15);
+    var yBg = p * 70;
+    var yImg = p * 38;
+    var yCopy = p * 28;
+    var yChips = p * 40;
+    var fade = Math.max(0, 1 - p * 0.95);
     if (bg) bg.style.transform = "translate3d(0," + yBg.toFixed(2) + "px,0)";
-    if (img) img.style.transform = "scale(1.12) translate3d(0," + yImg.toFixed(2) + "px,0)";
+    if (img) img.style.transform = "scale(" + (1.08 + p * 0.06).toFixed(3) + ") translate3d(0," + yImg.toFixed(2) + "px,0)";
     if (copy) {
       copy.style.transform = "translate3d(0," + yCopy.toFixed(2) + "px,0)";
       copy.style.opacity = String(Math.max(0.15, fade));
