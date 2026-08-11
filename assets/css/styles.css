@@ -132,11 +132,12 @@ ul { margin: 0; padding: 0; list-style: none; }
 .btn-outline-light:hover { background: rgb(255 255 255 / 0.1); }
 .hero { position: relative; color: var(--fg-on-dark); background: var(--bg-dark); overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; }
-.hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+.hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 1; filter: none; }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(90deg, var(--bg-dark) 0%, rgb(11 31 51 / 0.92) 45%, rgb(11 31 51 / 0.7) 100%),
-    linear-gradient(0deg, var(--bg-dark) 0%, transparent 50%, rgb(11 31 51 / 0.4) 100%);
+  background:
+    linear-gradient(90deg, rgb(7 15 24 / 0.42) 0%, rgb(7 15 24 / 0.18) 34%, transparent 58%),
+    linear-gradient(0deg, rgb(7 15 24 / 0.28) 0%, transparent 40%);
 }
 .hero-inner { position: relative; padding-block: 4rem 5rem; }
 @media (min-width: 768px) {
@@ -510,6 +511,9 @@ body.modal-open { overflow: hidden; }
   inset: 0;
   overflow: hidden;
 }
+.hero-cinematic .hero-bg::after {
+  display: none;
+}
 .hero-cinematic .hero-bg-img {
   width: 100%;
   height: 100%;
@@ -531,25 +535,23 @@ body.modal-open { overflow: hidden; }
   position: absolute;
   inset: 0;
   pointer-events: none;
-  /* Lighter overlay so photo is visible; type stays readable via local scrim */
   background:
     linear-gradient(90deg,
-      rgb(7 15 24 / 0.72) 0%,
-      rgb(7 15 24 / 0.48) 32%,
-      rgb(7 15 24 / 0.18) 58%,
-      rgb(7 15 24 / 0.06) 78%,
-      rgb(7 15 24 / 0.12) 100%),
+      rgb(7 15 24 / 0.35) 0%,
+      rgb(7 15 24 / 0.14) 26%,
+      rgb(7 15 24 / 0.04) 48%,
+      transparent 68%),
     linear-gradient(0deg,
-      rgb(7 15 24 / 0.55) 0%,
-      rgb(7 15 24 / 0.08) 45%,
-      rgb(7 15 24 / 0.28) 100%);
+      rgb(7 15 24 / 0.25) 0%,
+      transparent 38%,
+      rgb(7 15 24 / 0.08) 100%);
 }
 .hero-grain {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.08;
-  mix-blend-mode: overlay;
+  opacity: 0.03;
+  mix-blend-mode: soft-light;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 180px 180px;
 }
@@ -582,7 +584,7 @@ body.modal-open { overflow: hidden; }
 }
 .hero-cinematic .hero-bg-img {
   opacity: 1;
-  filter: saturate(1.05) contrast(1.05) brightness(0.95);
+  filter: saturate(1.08) contrast(1.06) brightness(1.15);
 }
 .hero-cinematic .hero-inner {
   position: relative;

@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/styles.css?v=hero2">
+<link rel="stylesheet" href="../assets/css/styles.css?v=v3">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -59,15 +59,15 @@
 <main id="main">
   <div class="preview-banner">
     <div class="container preview-banner-inner">
-      <strong>Internal preview</strong>
-      <span>Not public — review the cinematic hero here before publishing.</span>
+      <strong>HERO BRIGHTNESS FIX v3</strong>
+      <span>You should see a clear copper-winding transformer and an orange BRIGHT HERO v3 tag on the photo.</span>
       <a href="../">← Back to live site</a>
     </div>
   </div>
 
   <section class="hero hero-cinematic" data-hero>
     <div class="hero-bg" aria-hidden="true">
-      <img src="../assets/img/hero-cinematic.jpg" alt="" class="hero-bg-img" data-hero-img>
+      <img src="../assets/img/hero-home-bright.jpg" alt="" class="hero-bg-img" data-hero-img>
       <div class="hero-vignette"></div>
       <div class="hero-grain"></div>
     </div>
@@ -121,7 +121,7 @@
   });
   var hero = document.querySelector('[data-hero-img]');
   if (hero) {
-    var f = (hero.getAttribute('src')||'').split('/').pop() || 'hero-cinematic.jpg';
+    var f = (hero.getAttribute('src')||'').split('/').pop() || 'hero-home-bright.jpg';
     hero.src = (window.EP_SITE_ROOT || '') + '/assets/img/' + f;
   }
 })();
