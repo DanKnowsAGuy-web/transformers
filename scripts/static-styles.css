@@ -904,12 +904,12 @@ body.modal-open { overflow: hidden; }
   transition: opacity 0.3s ease;
 }
 
-/* ===== Preview-only hero parallax (not on public homepage) ===== */
-body.preview-motion .hero-cinematic.hero-parallax {
+/* ===== Hero scroll parallax (public + preview) ===== */
+.hero-cinematic.hero-parallax {
   min-height: 100svh;
   isolation: isolate;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-bg {
+.hero-cinematic.hero-parallax .hero-bg {
   /* extra headroom for stronger parallax travel */
   inset: -22% 0 -22% 0;
   height: auto;
@@ -917,7 +917,7 @@ body.preview-motion .hero-cinematic.hero-parallax .hero-bg {
   bottom: -22%;
   will-change: transform;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-bg-img {
+.hero-cinematic.hero-parallax .hero-bg-img {
   /* Ken Burns off when scroll parallax is active — less conflict */
   animation: none !important;
   transform: scale(1.18);
@@ -925,18 +925,19 @@ body.preview-motion .hero-cinematic.hero-parallax .hero-bg-img {
   will-change: transform;
   transition: opacity 0.35s ease;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-vignette,
-body.preview-motion .hero-cinematic.hero-parallax .hero-grain {
+.hero-cinematic.hero-parallax .hero-vignette,
+.hero-cinematic.hero-parallax .hero-grain {
   will-change: transform, opacity;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-copy {
+.hero-cinematic.hero-parallax .hero-copy {
   will-change: transform, opacity;
   transition: none;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-chips {
+.hero-cinematic.hero-parallax .hero-chips,
+.hero-cinematic.hero-parallax .hero-stats {
   will-change: transform, opacity;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-scroll-hint {
+.hero-cinematic.hero-parallax .hero-scroll-hint {
   position: absolute;
   left: 50%;
   bottom: 1.25rem;
@@ -955,10 +956,10 @@ body.preview-motion .hero-cinematic.hero-parallax .hero-scroll-hint {
   opacity: 1;
   transition: opacity 0.35s ease;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-scroll-hint.is-hidden {
+.hero-cinematic.hero-parallax .hero-scroll-hint.is-hidden {
   opacity: 0;
 }
-body.preview-motion .hero-cinematic.hero-parallax .hero-scroll-hint span {
+.hero-cinematic.hero-parallax .hero-scroll-hint span {
   width: 1px;
   height: 2rem;
   background: linear-gradient(180deg, rgb(196 92 38 / 0.9), transparent);
@@ -969,16 +970,16 @@ body.preview-motion .hero-cinematic.hero-parallax .hero-scroll-hint span {
   50% { transform: scaleY(1); opacity: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
-  body.preview-motion .hero-cinematic.hero-parallax .hero-bg,
-  body.preview-motion .hero-cinematic.hero-parallax .hero-bg-img,
-  body.preview-motion .hero-cinematic.hero-parallax .hero-copy,
-  body.preview-motion .hero-cinematic.hero-parallax .hero-chips {
+  .hero-cinematic.hero-parallax .hero-bg,
+  .hero-cinematic.hero-parallax .hero-bg-img,
+  .hero-cinematic.hero-parallax .hero-copy,
+  .hero-cinematic.hero-parallax .hero-chips {
     transform: none !important;
     opacity: 1 !important;
   }
-  body.preview-motion .hero-cinematic.hero-parallax .hero-scroll-hint span {
+  .hero-cinematic.hero-parallax .hero-scroll-hint span {
     animation: none;
   }
 }
-/* end preview-only parallax */
+/* end hero parallax */
 

@@ -13,7 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/styles.css?v=v8">
+<link rel="stylesheet" href="assets/css/styles.css?v=v9">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -55,23 +55,32 @@
   </div>
 </header>
 <main id="main">
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="assets/img/hero-copper-hybrid.jpg?v=v7" alt="">
+  <section class="hero hero-cinematic hero-parallax" data-parallax-hero>
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/img/hero-copper-hybrid.jpg?v=v9" alt="" class="hero-bg-img" data-hero-img>
+      <div class="hero-vignette"></div>
+      <div class="hero-grain"></div>
     </div>
     <div class="container hero-inner">
-      <p class="hero-badge">Transformer Procurement Services</p>
-      <h1>One source. Any transformer. <span class="accent-text">Delivered.</span></h1>
-      <p class="hero-lede">Power, distribution, and specialty transformers—and reactors—sourced through our manufacturing network up to <strong>1,250 MVA / 765 kV</strong>. You send the specs. We own quote to delivery.</p>
-      <div class="hero-actions">
-        <a class="btn btn-accent btn-lg" href="quote/">Request a quote</a>
-        <a class="btn btn-outline-light btn-lg" href="transformers/">Browse product range</a>
+      <div class="hero-copy">
+        <p class="hero-badge">Transformer Procurement Services</p>
+        <h1>One source. Any transformer. <span class="accent-text">Delivered.</span></h1>
+        <p class="hero-lede">Power, distribution, and specialty transformers—and reactors—sourced through our manufacturing network up to <strong>1,250 MVA / 765 kV</strong>. You send the specs. We own quote to delivery.</p>
+        <div class="hero-actions">
+          <a class="btn btn-accent btn-lg" href="quote/">Request a quote</a>
+          <a class="btn btn-outline-light btn-lg" href="transformers/">Browse product range</a>
+        </div>
       </div>
-      <div class="hero-stats">
-        <div><strong>1,250 MVA</strong><span>Max capacity</span></div>
-        <div><strong>765 kV</strong><span>Max voltage</span></div>
-        <div><strong>3 mo+</strong><span>Lead times from</span></div>
+      <div class="hero-chips" role="list">
+        <div class="hero-chip" role="listitem"><strong>1,250 MVA</strong><span>Max capacity</span></div>
+        <div class="hero-chip" role="listitem"><strong>765 kV</strong><span>Max voltage</span></div>
+        <div class="hero-chip" role="listitem"><strong>3 mo+</strong><span>Lead times from</span></div>
+        <div class="hero-chip" role="listitem"><strong>IEEE · IEC</strong><span>Standards ready</span></div>
       </div>
+    </div>
+    <div class="hero-scroll-hint" data-scroll-hint aria-hidden="true">
+      Scroll
+      <span></span>
     </div>
   </section>
 
@@ -311,6 +320,6 @@
   </div>
 </footer>
 <script>window.EP_CONTACT = {"phone":"864-777-0688","phoneTel":"tel:+18647770688","email":"dan@yourenergyplus.com","smsHref":"sms:+18647770688?body=Hi%20Dan%20%E2%80%94%20I%27m%20interested%20in%20how%20Energy%20Plus%20can%20help%20with%20transformer%20procurement.%20What%27s%20the%20best%20next%20step%3F","emailHref":"mailto:dan@yourenergyplus.com?subject=Transformer%20inquiry%20%E2%80%94%20Energy%20Plus&body=Hi%20Dan%2C%0A%0AI'm%20interested%20in%20discussing%20transformer%20procurement%20with%20Energy%20Plus.%0A%0AProject%20%2F%20need%3A%0A%0A%0AThanks%2C","formspree":"https://formspree.io/f/maewodgg","smsBody":"Hi Dan — I'm interested in how Energy Plus can help with transformer procurement. What's the best next step?"};</script>
-<script src="assets/js/site.js"></script>
+<script src="assets/js/site.js?v=v9"></script>
 </body>
 </html>

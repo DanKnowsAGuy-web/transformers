@@ -14,9 +14,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/styles.css?v=v8">
+<link rel="stylesheet" href="../assets/css/styles.css?v=v9">
 </head>
-<body class="preview-motion">
+<body>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="container header-inner">
@@ -59,8 +59,8 @@
 <main id="main">
   <div class="preview-banner">
     <div class="container preview-banner-inner">
-      <strong>Motion preview only</strong>
-      <span>Stronger parallax mock — scroll to feel it. Still preview-only until you approve.</span>
+      <strong>Live motion enabled</strong>
+      <span>Stronger parallax is now on the public homepage. This page remains the image workshop.</span>
       <a href="../">← Back to live site</a>
     </div>
   </div>
@@ -296,58 +296,6 @@
 </footer>
 <script>window.EP_CONTACT = {"phone":"864-777-0688","phoneTel":"tel:+18647770688","email":"dan@yourenergyplus.com","smsHref":"sms:+18647770688?body=Hi%20Dan%20%E2%80%94%20I%27m%20interested%20in%20how%20Energy%20Plus%20can%20help%20with%20transformer%20procurement.%20What%27s%20the%20best%20next%20step%3F","emailHref":"mailto:dan@yourenergyplus.com?subject=Transformer%20inquiry%20%E2%80%94%20Energy%20Plus&body=Hi%20Dan%2C%0A%0AI'm%20interested%20in%20discussing%20transformer%20procurement%20with%20Energy%20Plus.%0A%0AProject%20%2F%20need%3A%0A%0A%0AThanks%2C","formspree":"https://formspree.io/f/maewodgg","smsBody":"Hi Dan — I'm interested in how Energy Plus can help with transformer procurement. What's the best next step?"};</script>
 
-<script>
-/* Preview-only hero scroll motion — not loaded on public homepage */
-(function () {
-  if (!document.body.classList.contains("preview-motion")) return;
-  var hero = document.querySelector("[data-parallax-hero]");
-  if (!hero) return;
-  var bg = hero.querySelector(".hero-bg");
-  var img = hero.querySelector("[data-hero-img]");
-  var copy = hero.querySelector(".hero-copy");
-  var chips = hero.querySelector(".hero-chips");
-  var hint = hero.querySelector("[data-scroll-hint]");
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce) return;
-
-  var ticking = false;
-  function frame() {
-    ticking = false;
-    var rect = hero.getBoundingClientRect();
-    // 0 while hero is at rest (top in view); 1 as hero scrolls out
-    var scrolled = Math.max(0, -rect.top);
-    var maxScroll = Math.max(1, rect.height * 0.65);
-    var p = Math.min(1, scrolled / maxScroll);
-    // stronger parallax travel — still industrial, clearly felt
-    var yBg = p * 160;
-    var yImg = p * 95;
-    var yCopy = p * 70;
-    var yChips = p * 95;
-    var fade = Math.max(0.08, 1 - p * 1.05);
-    if (bg) bg.style.transform = "translate3d(0," + yBg.toFixed(2) + "px,0)";
-    if (img) img.style.transform = "scale(" + (1.14 + p * 0.12).toFixed(3) + ") translate3d(0," + (yImg * 0.55).toFixed(2) + "px,0) translate3d(" + (p * -28).toFixed(2) + "px,0,0)";
-    if (copy) {
-      copy.style.transform = "translate3d(0," + yCopy.toFixed(2) + "px,0)";
-      copy.style.opacity = String(Math.max(0.15, fade));
-    }
-    if (chips) {
-      chips.style.transform = "translate3d(0," + yChips.toFixed(2) + "px,0)";
-      chips.style.opacity = String(Math.max(0.1, fade * 0.95));
-    }
-    if (hint) hint.classList.toggle("is-hidden", window.scrollY > 48);
-  }
-  function onScroll() {
-    if (!ticking) {
-      ticking = true;
-      requestAnimationFrame(frame);
-    }
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", onScroll, { passive: true });
-  frame();
-})();
-</script>
-
-<script src="../assets/js/site.js?v=v8"></script>
+<script src="../assets/js/site.js?v=v9"></script>
 </body>
 </html>

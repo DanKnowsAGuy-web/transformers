@@ -319,3 +319,64 @@
     }
   }
 })();
+
+
+/* Hero scroll parallax (copper hybrid live) */
+(function () {
+  function initHeroParallax() {
+    var hero = document.querySelector("[data-parallax-hero]");
+    if (!hero) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    var bg = hero.querySelector(".hero-bg");
+    var img = hero.querySelector("[data-hero-img], .hero-bg-img, .hero-bg img");
+    var copy = hero.querySelector(".hero-copy") || hero.querySelector(".hero-inner");
+    var chips = hero.querySelector(".hero-chips") || hero.querySelector(".hero-stats");
+    var hint = hero.querySelector("[data-scroll-hint]");
+    var ticking = false;
+
+    function frame() {
+      ticking = false;
+      var rect = hero.getBoundingClientRect();
+      var scrolled = Math.max(0, -rect.top);
+      var maxScroll = Math.max(1, rect.height * 0.65);
+      var p = Math.min(1, scrolled / maxScroll);
+      var yBg = p * 160;
+      var yImg = p * 95;
+      var yCopy = p * 70;
+      var yChips = p * 95;
+      var fade = Math.max(0.08, 1 - p * 1.05);
+      if (bg) bg.style.transform = "translate3d(0," + yBg.toFixed(2) + "px,0)";
+      if (img) {
+        img.style.transform =
+          "scale(" + (1.14 + p * 0.12).toFixed(3) + ") translate3d(" +
+          (p * -28).toFixed(2) + "px," + (yImg * 0.55).toFixed(2) + "px,0)";
+      }
+      if (copy) {
+        copy.style.transform = "translate3d(0," + yCopy.toFixed(2) + "px,0)";
+        copy.style.opacity = String(Math.max(0.12, fade));
+      }
+      if (chips) {
+        chips.style.transform = "translate3d(0," + yChips.toFixed(2) + "px,0)";
+        chips.style.opacity = String(Math.max(0.1, fade * 0.95));
+      }
+      if (hint) hint.classList.toggle("is-hidden", window.scrollY > 48);
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(frame);
+      }
+    }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    frame();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initHeroParallax);
+  } else {
+    initHeroParallax();
+  }
+})();
