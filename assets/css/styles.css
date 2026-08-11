@@ -135,9 +135,10 @@ ul { margin: 0; padding: 0; list-style: none; }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 1; filter: none; }
 .hero-bg::after {
   content: ""; position: absolute; inset: 0;
+  /* Minimal left text legibility only — photo is primary */
   background:
-    linear-gradient(90deg, rgb(7 15 24 / 0.42) 0%, rgb(7 15 24 / 0.18) 34%, transparent 58%),
-    linear-gradient(0deg, rgb(7 15 24 / 0.28) 0%, transparent 40%);
+    linear-gradient(90deg, rgb(7 15 24 / 0.28) 0%, rgb(7 15 24 / 0.1) 28%, transparent 48%),
+    linear-gradient(0deg, rgb(7 15 24 / 0.18) 0%, transparent 35%);
 }
 .hero-inner { position: relative; padding-block: 4rem 5rem; }
 @media (min-width: 768px) {
@@ -537,14 +538,12 @@ body.modal-open { overflow: hidden; }
   pointer-events: none;
   background:
     linear-gradient(90deg,
-      rgb(7 15 24 / 0.35) 0%,
-      rgb(7 15 24 / 0.14) 26%,
-      rgb(7 15 24 / 0.04) 48%,
-      transparent 68%),
+      rgb(7 15 24 / 0.22) 0%,
+      rgb(7 15 24 / 0.08) 22%,
+      transparent 45%),
     linear-gradient(0deg,
-      rgb(7 15 24 / 0.25) 0%,
-      transparent 38%,
-      rgb(7 15 24 / 0.08) 100%);
+      rgb(7 15 24 / 0.16) 0%,
+      transparent 35%);
 }
 .hero-grain {
   position: absolute;
