@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/styles.css?v=v7b">
+<link rel="stylesheet" href="../assets/css/styles.css?v=v8">
 </head>
 <body class="preview-motion">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -60,7 +60,7 @@
   <div class="preview-banner">
     <div class="container preview-banner-inner">
       <strong>Motion preview only</strong>
-      <span>Scroll the page — parallax + copy drift. Not on the public homepage until you approve.</span>
+      <span>Stronger parallax mock — scroll to feel it. Still preview-only until you approve.</span>
       <a href="../">← Back to live site</a>
     </div>
   </div>
@@ -316,16 +316,16 @@
     var rect = hero.getBoundingClientRect();
     // 0 while hero is at rest (top in view); 1 as hero scrolls out
     var scrolled = Math.max(0, -rect.top);
-    var maxScroll = Math.max(1, rect.height * 0.85);
+    var maxScroll = Math.max(1, rect.height * 0.65);
     var p = Math.min(1, scrolled / maxScroll);
-    // parallax travel in px — subtle industrial, not flashy
-    var yBg = p * 70;
-    var yImg = p * 38;
-    var yCopy = p * 28;
-    var yChips = p * 40;
-    var fade = Math.max(0, 1 - p * 0.95);
+    // stronger parallax travel — still industrial, clearly felt
+    var yBg = p * 160;
+    var yImg = p * 95;
+    var yCopy = p * 70;
+    var yChips = p * 95;
+    var fade = Math.max(0.08, 1 - p * 1.05);
     if (bg) bg.style.transform = "translate3d(0," + yBg.toFixed(2) + "px,0)";
-    if (img) img.style.transform = "scale(" + (1.08 + p * 0.06).toFixed(3) + ") translate3d(0," + yImg.toFixed(2) + "px,0)";
+    if (img) img.style.transform = "scale(" + (1.14 + p * 0.12).toFixed(3) + ") translate3d(0," + (yImg * 0.55).toFixed(2) + "px,0) translate3d(" + (p * -28).toFixed(2) + "px,0,0)";
     if (copy) {
       copy.style.transform = "translate3d(0," + yCopy.toFixed(2) + "px,0)";
       copy.style.opacity = String(Math.max(0.15, fade));
@@ -348,6 +348,6 @@
 })();
 </script>
 
-<script src="../assets/js/site.js?v=v7b"></script>
+<script src="../assets/js/site.js?v=v8"></script>
 </body>
 </html>

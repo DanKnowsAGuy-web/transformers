@@ -910,17 +910,17 @@ body.preview-motion .hero-cinematic.hero-parallax {
   isolation: isolate;
 }
 body.preview-motion .hero-cinematic.hero-parallax .hero-bg {
-  /* taller so parallax travel has room without edges showing */
-  inset: -12% 0 -12% 0;
+  /* extra headroom for stronger parallax travel */
+  inset: -22% 0 -22% 0;
   height: auto;
-  top: -12%;
-  bottom: -12%;
+  top: -22%;
+  bottom: -22%;
   will-change: transform;
 }
 body.preview-motion .hero-cinematic.hero-parallax .hero-bg-img {
   /* Ken Burns off when scroll parallax is active — less conflict */
   animation: none !important;
-  transform: scale(1.12);
+  transform: scale(1.18);
   transform-origin: 70% 30%;
   will-change: transform;
   transition: opacity 0.35s ease;
