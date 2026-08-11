@@ -1138,10 +1138,12 @@ body.sb-preview .sb-hero h1 {
   text-wrap: balance;
 }
 body.sb-preview .sb-hero .hero-lede {
-  color: rgb(230 236 242 / 0.92);
-  font-size: 1.08rem;
-  margin-bottom: 1.5rem;
-  max-width: 34rem;
+  font-size: clamp(1.2rem, 2.1vw, 1.35rem);
+  line-height: 1.55;
+  font-weight: 450;
+  color: rgb(250 252 253 / 0.97);
+  max-width: 38rem;
+  margin-bottom: 1.75rem;
 }
 body.sb-preview .sb-hero .hero-actions {
   display: flex;
@@ -1506,15 +1508,17 @@ body.sb-preview .sb-split-copy {
 
 /* ===== SB preview readability (65+ friendly) ===== */
 body.sb-preview {
-  font-size: 1.0625rem; /* 17px base */
+  font-size: 1.125rem; /* 18px base */
   line-height: 1.65;
 }
 body.sb-preview .lede {
-  font-size: 1.125rem; /* 18px */
-  line-height: 1.65;
-  color: #3d4a56; /* darker than --fg-muted for contrast */
-  max-width: 40rem;
-  margin-bottom: 1.75rem;
+  font-size: clamp(1.25rem, 2.2vw, 1.4rem); /* 20–22.4px: hard to skip under H2 */
+  line-height: 1.55;
+  font-weight: 500;
+  color: #24303a; /* near-body contrast */
+  max-width: 42rem;
+  margin-top: 0.35rem;
+  margin-bottom: 2rem;
 }
 body.sb-preview .section-title {
   font-size: clamp(1.85rem, 3.2vw, 2.35rem);
@@ -1548,9 +1552,9 @@ body.sb-preview .sb-problem-card p,
 body.sb-preview .sb-empathy-auth p,
 body.sb-preview .sb-plan p,
 body.sb-preview .feature-card p {
-  font-size: 1.05rem;
+  font-size: 1.125rem;
   line-height: 1.6;
-  color: #3d4a56;
+  color: #2f3b46;
 }
 body.sb-preview .sb-stakes li {
   font-size: 1.05rem;
@@ -1580,8 +1584,10 @@ body.sb-preview .cta-panel h2 {
   line-height: 1.2;
 }
 body.sb-preview .cta-panel .lede {
-  color: rgb(230 236 242 / 0.92);
-  font-size: 1.1rem;
+  color: rgb(245 248 250 / 0.96);
+  font-size: clamp(1.15rem, 2vw, 1.3rem);
+  font-weight: 500;
+  line-height: 1.55;
 }
 body.sb-preview .cat-card-body p {
   font-size: 1rem;
